@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pirata Games</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="Java/script.js"></script>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+    <h1>Pirate Games</h1>
+    <p>Bienvenido/a a Pirate Games</p>
+
+    <h1 class="categorias">Categorías</h1>
+
+    <ul>
+        <li><a href="accion.html">Accion</a></li>
+        <li><a href="terror.html">Terror</a></li>
+        <li><a href="aventura.html">Aventura</a></li>
+        <li><a href="supervivencia.html">Supervivencia</a></li>
+        <li><a href="arcade.html">Arcade</a></li>
+        <li><a href="estrategia.html">Estrategia</a></li>
+        <li><a href="deportes.html">Deportes</a></li>
+    </ul>
+
+    <div id="inicio-sesion">
+        <h2>Iniciar sesión</h2>
+        <form>
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required><br><br>
+
+            <label for="contraseña">Contraseña</label>
+            <input type="password" id="contraseña" name="contraseña" required><br><br>
+
+            <input type="button" value="Iniciar sesión" onclick="validarInicioSesion()">
+        </form>
+    </div>
+    
+    <button onclick="recuperarContraseña()">Recuperar contraseña</button>
+ 
+    <button onclick="mostrarRegistro()">Registrar usuario</button>
+            
+    <div id="registrarUsuario" style="display: none;">
+        <h2>Registrar usuario</h2>
+        <form id="registro">
+            <label for="nombreUsuario">Nombre de usuario:</label>
+            <input type="text" id="nombreUsuario" name="nombreUsuario" required><br><br>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required><br><br>
+
+            <label for="confirmarCorreo">Confirmar correo electrónico:</label>
+            <input type="email" id="confirmarCorreo" name="confirmarCorreo" required><br><br>
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseñaRegistro" name="contraseña" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{7,20}$" required><br><br>
+            
+            <label for="confirmarContraseña">Confirmar contraseña:</label>
+            <input type="password" id="confirmarContraseña" name="confirmarContraseña" required><br><br>
+
+            <input type="button" value="Registrarse" onclick="validarRegistro()">
+        </form>
+    </div>
+
+    
+    <p id="mensajeBienvenida"></p>
+    <button id="botonModificarPerfil" onclick="mostrarVentanaModificarPerfil()" style="display: none;">Modificar perfil</button>
+
+    <div id="ventanaModificarPerfil" style="display: none;">
+        <h2>Modificar perfil</h2>
+        <form id="formuModificarPerfil">
+            <label for="cambiarNombreUsuario">Cambiar nombre de usuario:</label>
+            <input type="text" id="nombre" name="nombre"><br><br>
+
+            <label for="añadirDescripcion">Añade una breve descripción tuya:</label>
+            <textarea id="descripcion" name="descripcion"></textarea><br><br>
+
+            <label for="cambiarContraseña">Cambiar contraseña:</label>
+            <input type="password" id="cambiarContraseña" name="cambiarContraseña"><br><br>
+
+            <input type="button" value="Guardar cambios" onclick="guardarCambiosPerfil()">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pirata Games</p>
+    </footer>
+
+</body>
+</html>
